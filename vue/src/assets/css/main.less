@@ -1,0 +1,113 @@
+@import "element-plus.less";
+@import "theme1.less";
+@import "theme2.less";
+@import "theme3.less";
+
+// 自定义按钮
+.x-btn{
+  margin: 0 5px;
+  border: none;
+  background-color: var(--x-color-primary);
+  color: white;
+  cursor: pointer;
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+.x-btn:hover{
+  background-color: var(--x-color-primary-l);
+}
+.x-btn-success{
+  background-color: var(--x-color-success);
+}
+.x-btn-success:hover{
+  background-color: var(--x-color-success-l);
+}
+.x-btn-warn{
+  background-color: var(--x-color-warn);
+}
+.x-btn-warn:hover{
+  background-color: var(--x-color-warn-l);
+}
+.x-btn-error{
+  background-color: var(--x-color-danger);
+}
+.x-btn-error:hover{
+  background-color: var(--x-color-danger-l);
+}
+
+//按钮大小
+.x-btn-m{
+  padding: 5px 10px;
+}
+
+.x-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.x-column-reverse {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.x-row-start {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.x-row-end {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.x-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.x-row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.x-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.x-pointer {
+ cursor: pointer;
+}
+
+/**
+滚动条样式
+ */
+::-webkit-scrollbar {
+  width: 2px;
+  height: 8px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 3px;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 5px;
+  background-color: rgba(125, 125, 125, 0.7);
+  -webkit-border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  width: 3px;
+  background-color: rgba(125, 125, 125, 0.7);
+  -webkit-border-radius: 3px;
+  cursor: pointer;
+}
+

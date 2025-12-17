@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 学生映射文件 -->
+<mapper namespace="com.codeying.mapper.StudentMapper">
+
+
+    <!--查询-->
+    <select id="sqlSelectList" resultType="com.codeying.entity.Student">
+        select * from tb_Student t
+        <where>
+            <if test="vo!=null and vo.username != null and vo.username != ''">
+                t.username like CONCAT('%',#{ vo.username },'%');
+            </if>
+            <if test="vo!=null and vo.name != null and vo.name != ''">
+                t.name like CONCAT('%',#{ vo.name },'%');
+            </if>
+            <if test="vo!=null and vo.gender != null and vo.gender != ''">
+                t.gender like CONCAT('%',#{ vo.gender },'%');
+            </if>
+            <if test="vo!=null and vo.numb != null and vo.numb != ''">
+                t.numb like CONCAT('%',#{ vo.numb },'%');
+            </if>
+            <if test="vo!=null and vo.clazzid != null and vo.clazzid != ''">
+                t.clazzid like CONCAT('%',#{ vo.clazzid },'%');
+            </if>
+        </where>
+    </select>
+
+    <delete id="sqlDelete">
+        delete from tb_Student where id = #{id}
+    </delete>
+    
+    <update id="sqlUpdate">
+        update tb_Student
+        set id=#{id}  ,username=#{username}  ,password=#{password}  ,name=#{name}  ,avatar=#{avatar}  ,gender=#{gender}  ,age=#{age}  ,tele=#{tele}  ,place=#{place}  ,ruxsj=#{ruxsj}  ,numb=#{numb}  ,clazzid=#{clazzid} 
+        where id= #{id}
+    </update>
+
+    <insert id="sqlSave">
+        insert into tb_Student values(
+        #{id}, ,#{username}  ,#{password}  ,#{name}  ,#{avatar}  ,#{gender}  ,#{age}  ,#{tele}  ,#{place}  ,#{ruxsj}  ,#{numb}  ,#{clazzid} 
+        )
+    </insert>
+
+</mapper>
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 成绩映射文件 -->
+<mapper namespace="com.codeying.mapper.ScoreMapper">
+
+
+    <!--查询-->
+    <select id="sqlSelectList" resultType="com.codeying.entity.Score">
+        select * from tb_Score t
+        <where>
+            <if test="vo!=null and vo.sid != null and vo.sid != ''">
+                t.sid like CONCAT('%',#{ vo.sid },'%');
+            </if>
+            <if test="vo!=null and vo.cid != null and vo.cid != ''">
+                t.cid like CONCAT('%',#{ vo.cid },'%');
+            </if>
+        </where>
+    </select>
+
+    <delete id="sqlDelete">
+        delete from tb_Score where id = #{id}
+    </delete>
+    
+    <update id="sqlUpdate">
+        update tb_Score
+        set id=#{id}  ,sid=#{sid}  ,cid=#{cid}  ,createtime=#{createtime}  ,score=#{score} 
+        where id= #{id}
+    </update>
+
+    <insert id="sqlSave">
+        insert into tb_Score values(
+        #{id}, ,#{sid}  ,#{cid}  ,#{createtime}  ,#{score} 
+        )
+    </insert>
+
+</mapper>
+
